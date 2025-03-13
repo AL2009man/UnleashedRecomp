@@ -65,14 +65,17 @@ std::tuple<std::tuple<ImVec2, ImVec2>, GuestTexture*> GetButtonIcon(EButtonIcon 
     std::tuple<ImVec2, ImVec2> btn;
     GuestTexture* texture;
 
-    auto isPlayStation = Config::ControllerIcons == EControllerIcons::Auto
-        ? hid::g_inputDeviceController == hid::EInputDevice::PlayStation
-        : Config::ControllerIcons == EControllerIcons::PlayStation;
+    // Determine if the controller type is PlayStation or Nintendo
+    auto isPlayStation = Config::ControllerIcons == EControllerIcons::PlayStation;
+    auto isNintendo = Config::ControllerIcons == EControllerIcons::Nintendo;
 
-    auto isNintendo = Config::ControllerIcons == EControllerIcons::Auto
-        ? hid::g_inputDeviceController == hid::EInputDevice::Nintendo
-        : Config::ControllerIcons == EControllerIcons::Nintendo;
+    if (Config::ControllerIcons == EControllerIcons::Auto)
+    {
+        isPlayStation = hid::g_inputDeviceController == hid::EInputDevice::PlayStation;
+        isNintendo = hid::g_inputDeviceController == hid::EInputDevice::Nintendo;
+    }
 
+    // Adjust y-offsets based on the controller type
     auto yOffsetCmn = isPlayStation ? 42 : 0;
     auto yOffsetStartBack = isPlayStation ? 46 : 0;
 
@@ -80,29 +83,29 @@ std::tuple<std::tuple<ImVec2, ImVec2>, GuestTexture*> GetButtonIcon(EButtonIcon 
     {
     case EButtonIcon::A:
         btn = isNintendo
-            ? PIXELS_TO_UV_COORDS(512, 128, 40, yOffsetCmn, 40, 40) // Map to B's texture position.
-            : PIXELS_TO_UV_COORDS(512, 128, 0, yOffsetCmn, 40, 40); // Standard A.
+            ? PIXELS_TO_UV_COORDS(512, 128, 40, yOffsetCmn, 40, 40) // Map A to B's texture for Nintendo
+            : PIXELS_TO_UV_COORDS(512, 128, 0, yOffsetCmn, 40, 40); // Standard A
         texture = g_upControllerIcons.get();
         break;
 
     case EButtonIcon::B:
         btn = isNintendo
-            ? PIXELS_TO_UV_COORDS(512, 128, 0, yOffsetCmn, 40, 40) // Map to A's texture position.
-            : PIXELS_TO_UV_COORDS(512, 128, 40, yOffsetCmn, 40, 40); // Standard B.
+            ? PIXELS_TO_UV_COORDS(512, 128, 0, yOffsetCmn, 40, 40) // Map B to A's texture for Nintendo
+            : PIXELS_TO_UV_COORDS(512, 128, 40, yOffsetCmn, 40, 40); // Standard B
         texture = g_upControllerIcons.get();
         break;
 
     case EButtonIcon::X:
         btn = isNintendo
-            ? PIXELS_TO_UV_COORDS(512, 128, 120, yOffsetCmn, 40, 40) // Map to Y's texture position.
-            : PIXELS_TO_UV_COORDS(512, 128, 80, yOffsetCmn, 40, 40); // Standard X.
+            ? PIXELS_TO_UV_COORDS(512, 128, 120, yOffsetCmn, 40, 40) // Map X to Y's texture for Nintendo
+            : PIXELS_TO_UV_COORDS(512, 128, 80, yOffsetCmn, 40, 40); // Standard X
         texture = g_upControllerIcons.get();
         break;
 
     case EButtonIcon::Y:
         btn = isNintendo
-            ? PIXELS_TO_UV_COORDS(512, 128, 80, yOffsetCmn, 40, 40) // Map to X's texture position.
-            : PIXELS_TO_UV_COORDS(512, 128, 120, yOffsetCmn, 40, 40); // Standard Y.
+            ? PIXELS_TO_UV_COORDS(512, 128, 80, yOffsetCmn, 40, 40) // Map Y to X's texture for Nintendo
+            : PIXELS_TO_UV_COORDS(512, 128, 120, yOffsetCmn, 40, 40); // Standard Y
         texture = g_upControllerIcons.get();
         break;
 
@@ -189,7 +192,7 @@ static void DrawGuide(float* offset, ImVec2 regionMin, ImVec2 regionMax, EButton
         btnIcon = GetButtonIcon(icon == EButtonIcon::LBRB ? EButtonIcon::RB : EButtonIcon::RT);
         drawList->AddImage(std::get<1>(btnIcon), dualIconMin, dualIconMax, GET_UV_COORDS(std::get<0>(btnIcon)));
 
-        textPos = { (iconMax.x + ((dualIconMin.x - iconMax.x) - maxTextWidth + std::max(0.0f, maxTextWidth - textWidth)) / 2) + Scale(2), textMarginY};
+        textPos = { (iconMax.x + ((dualIconMin.x - iconMax.x) - maxTextWidth + std::max(0.0f, maxTextWidth - textWidth)) / 2) + Scale(2), textMarginY };
 
         *offset += iconWidth;
     }

@@ -187,31 +187,21 @@ GuestTexture* GetThumbnail(const IConfigDef* cfg)
         auto texture = g_defaultThumbnail.get();
 
         bool isPlayStation = Config::ControllerIcons == EControllerIcons::PlayStation;
-        bool isNintendo = Config::ControllerIcons == EControllerIcons::Nintendo;
 
         if (Config::ControllerIcons == EControllerIcons::Auto)
-        {
             isPlayStation = hid::g_inputDeviceController == hid::EInputDevice::PlayStation;
-            isNintendo = hid::g_inputDeviceController == hid::EInputDevice::Nintendo;
-        }
 
         if (cfg == &Config::ControlTutorial)
         {
-            texture = isPlayStation ? g_controlTutorialPSThumbnail.get()
-                : isNintendo ? g_controlTutorialXBThumbnail.get()
-                : g_controlTutorialXBThumbnail.get();
+            texture = isPlayStation ? g_controlTutorialPSThumbnail.get() : g_controlTutorialXBThumbnail.get();
         }
         else if (cfg == &Config::Vibration)
         {
-            texture = isPlayStation ? g_vibrationPSThumbnail.get()
-                : isNintendo ? g_vibrationXBThumbnail.get()
-                : g_vibrationXBThumbnail.get();
+            texture = isPlayStation ? g_vibrationPSThumbnail.get() : g_vibrationXBThumbnail.get();
         }
         else if (cfg == &Config::AllowBackgroundInput)
         {
-            texture = isPlayStation ? g_backgroundInputPSThumbnail.get()
-                : isNintendo ? g_backgroundInputXBThumbnail.get()
-                : g_backgroundInputXBThumbnail.get();
+            texture = isPlayStation ? g_backgroundInputPSThumbnail.get() : g_backgroundInputXBThumbnail.get();
         }
         else if (cfg == &Config::TimeOfDayTransition)
         {

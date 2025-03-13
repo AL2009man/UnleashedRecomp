@@ -77,9 +77,11 @@ PPC_FUNC_IMPL(__imp__sub_82B14CC0);
 PPC_FUNC(sub_82B14CC0)
 {
     auto isPlayStation = Config::ControllerIcons == EControllerIcons::PlayStation;
+    auto isNintendo = Config::ControllerIcons == EControllerIcons::Nintendo;
 
     if (Config::ControllerIcons == EControllerIcons::Auto)
         isPlayStation = hid::g_inputDeviceController == hid::EInputDevice::PlayStation;
+        isNintendo = hid::g_inputDeviceController == hid::EInputDevice::Nintendo;
 
     if (isPlayStation)
     {
@@ -87,6 +89,14 @@ PPC_FUNC(sub_82B14CC0)
         PPC_STORE_U8(0x820C29C3, 'r'); // Circle
         PPC_STORE_U8(0x820C29DB, 'p'); // Square
         PPC_STORE_U8(0x820C29F3, 'g'); // Triangle
+    }
+    // Nintendo prompt colors will be based on Super Famicon Controller)
+    else if (isNintendo)
+    {
+        PPC_STORE_U8(0x820C2A0B, 'y'); // B 
+        PPC_STORE_U8(0x820C29C3, 'r'); // A
+        PPC_STORE_U8(0x820C29DB, 'g'); // Y
+        PPC_STORE_U8(0x820C29F3, 'b'); // X
     }
     else
     {

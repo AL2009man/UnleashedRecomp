@@ -73,7 +73,6 @@ std::tuple<std::tuple<ImVec2, ImVec2>, GuestTexture*> GetButtonIcon(EButtonIcon 
         ? hid::g_inputDeviceController == hid::EInputDevice::Nintendo
         : Config::ControllerIcons == EControllerIcons::Nintendo;
 
-    // Adjust offsets for platforms using Xbox prompts.
     auto yOffsetCmn = isPlayStation ? 42 : 0;
     auto yOffsetStartBack = isPlayStation ? 46 : 0;
 

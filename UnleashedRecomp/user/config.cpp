@@ -34,7 +34,8 @@ CONFIG_DEFINE_ENUM_TEMPLATE(EControllerIcons)
 {
     { "Auto",        EControllerIcons::Auto },
     { "Xbox",        EControllerIcons::Xbox },
-    { "PlayStation", EControllerIcons::PlayStation }
+    { "PlayStation", EControllerIcons::PlayStation },
+    { "Nintendo",    EControllerIcons::Nintendo },
 };
 
 CONFIG_DEFINE_ENUM_TEMPLATE(SDL_Scancode)

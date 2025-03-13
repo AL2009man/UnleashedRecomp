@@ -69,75 +69,88 @@ std::tuple<std::tuple<ImVec2, ImVec2>, GuestTexture*> GetButtonIcon(EButtonIcon 
         ? hid::g_inputDeviceController == hid::EInputDevice::PlayStation
         : Config::ControllerIcons == EControllerIcons::PlayStation;
 
+    auto isNintendo = Config::ControllerIcons == EControllerIcons::Auto
+        ? hid::g_inputDeviceController == hid::EInputDevice::Nintendo
+        : Config::ControllerIcons == EControllerIcons::Nintendo;
+
+    // Adjust offsets for platforms using Xbox prompts.
     auto yOffsetCmn = isPlayStation ? 42 : 0;
     auto yOffsetStartBack = isPlayStation ? 46 : 0;
 
     switch (icon)
     {
-        case EButtonIcon::A:
-            btn = PIXELS_TO_UV_COORDS(512, 128, 0, yOffsetCmn, 40, 40);
-            texture = g_upControllerIcons.get();
-            break;
+    case EButtonIcon::A:
+        btn = isNintendo
+            ? PIXELS_TO_UV_COORDS(512, 128, 40, yOffsetCmn, 40, 40) // Map to B's texture position.
+            : PIXELS_TO_UV_COORDS(512, 128, 0, yOffsetCmn, 40, 40); // Standard A.
+        texture = g_upControllerIcons.get();
+        break;
 
-        case EButtonIcon::B:
-            btn = PIXELS_TO_UV_COORDS(512, 128, 40, yOffsetCmn, 40, 40);
-            texture = g_upControllerIcons.get();
-            break;
+    case EButtonIcon::B:
+        btn = isNintendo
+            ? PIXELS_TO_UV_COORDS(512, 128, 0, yOffsetCmn, 40, 40) // Map to A's texture position.
+            : PIXELS_TO_UV_COORDS(512, 128, 40, yOffsetCmn, 40, 40); // Standard B.
+        texture = g_upControllerIcons.get();
+        break;
 
-        case EButtonIcon::X:
-            btn = PIXELS_TO_UV_COORDS(512, 128, 80, yOffsetCmn, 40, 40);
-            texture = g_upControllerIcons.get();
-            break;
+    case EButtonIcon::X:
+        btn = isNintendo
+            ? PIXELS_TO_UV_COORDS(512, 128, 120, yOffsetCmn, 40, 40) // Map to Y's texture position.
+            : PIXELS_TO_UV_COORDS(512, 128, 80, yOffsetCmn, 40, 40); // Standard X.
+        texture = g_upControllerIcons.get();
+        break;
 
-        case EButtonIcon::Y:
-            btn = PIXELS_TO_UV_COORDS(512, 128, 120, yOffsetCmn, 40, 40);
-            texture = g_upControllerIcons.get();
-            break;
+    case EButtonIcon::Y:
+        btn = isNintendo
+            ? PIXELS_TO_UV_COORDS(512, 128, 80, yOffsetCmn, 40, 40) // Map to X's texture position.
+            : PIXELS_TO_UV_COORDS(512, 128, 120, yOffsetCmn, 40, 40); // Standard Y.
+        texture = g_upControllerIcons.get();
+        break;
 
-        case EButtonIcon::LB:
-            btn = PIXELS_TO_UV_COORDS(512, 128, 166, yOffsetCmn, 70, 40);
-            texture = g_upControllerIcons.get();
-            break;
+    case EButtonIcon::LB:
+        btn = PIXELS_TO_UV_COORDS(512, 128, 166, yOffsetCmn, 70, 40);
+        texture = g_upControllerIcons.get();
+        break;
 
-        case EButtonIcon::RB:
-            btn = PIXELS_TO_UV_COORDS(512, 128, 246, yOffsetCmn, 70, 40);
-            texture = g_upControllerIcons.get();
-            break;
+    case EButtonIcon::RB:
+        btn = PIXELS_TO_UV_COORDS(512, 128, 246, yOffsetCmn, 70, 40);
+        texture = g_upControllerIcons.get();
+        break;
 
-        case EButtonIcon::LT:
-            btn = PIXELS_TO_UV_COORDS(512, 128, 320, yOffsetCmn, 40, 42);
-            texture = g_upControllerIcons.get();
-            break;
+    case EButtonIcon::LT:
+        btn = PIXELS_TO_UV_COORDS(512, 128, 320, yOffsetCmn, 40, 42);
+        texture = g_upControllerIcons.get();
+        break;
 
-        case EButtonIcon::RT:
-            btn = PIXELS_TO_UV_COORDS(512, 128, 360, yOffsetCmn, 40, 42);
-            texture = g_upControllerIcons.get();
-            break;
+    case EButtonIcon::RT:
+        btn = PIXELS_TO_UV_COORDS(512, 128, 360, yOffsetCmn, 40, 42);
+        texture = g_upControllerIcons.get();
+        break;
 
-        case EButtonIcon::Start:
-            btn = PIXELS_TO_UV_COORDS(512, 128, 455, yOffsetStartBack, 46, 46);
-            texture = g_upControllerIcons.get();
-            break;
+    case EButtonIcon::Start:
+        btn = PIXELS_TO_UV_COORDS(512, 128, 455, yOffsetStartBack, 46, 46);
+        texture = g_upControllerIcons.get();
+        break;
 
-        case EButtonIcon::Back:
-            btn = PIXELS_TO_UV_COORDS(512, 128, 408, yOffsetStartBack, 46, 46);
-            texture = g_upControllerIcons.get();
-            break;
+    case EButtonIcon::Back:
+        btn = PIXELS_TO_UV_COORDS(512, 128, 408, yOffsetStartBack, 46, 46);
+        texture = g_upControllerIcons.get();
+        break;
 
-        case EButtonIcon::LMB:
-            btn = PIXELS_TO_UV_COORDS(384, 128, 0, 0, 128, 128);
-            texture = g_upKBMIcons.get();
-            break;
+    case EButtonIcon::LMB:
+        btn = PIXELS_TO_UV_COORDS(384, 128, 0, 0, 128, 128);
+        texture = g_upKBMIcons.get();
+        break;
 
-        case EButtonIcon::Enter:
-            btn = PIXELS_TO_UV_COORDS(384, 128, 128, 0, 128, 128);
-            texture = g_upKBMIcons.get();
-            break;
+    case EButtonIcon::Enter:
+        btn = PIXELS_TO_UV_COORDS(384, 128, 128, 0, 128, 128);
+        texture = g_upKBMIcons.get();
+        break;
 
-        case EButtonIcon::Escape:
-            btn = PIXELS_TO_UV_COORDS(384, 128, 256, 0, 128, 128);
-            texture = g_upKBMIcons.get();
-            break;
+    case EButtonIcon::Escape:
+        btn = PIXELS_TO_UV_COORDS(384, 128, 256, 0, 128, 128);
+        texture = g_upKBMIcons.get();
+        break;
     }
 
     return std::make_tuple(btn, texture);

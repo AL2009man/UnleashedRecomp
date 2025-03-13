@@ -235,7 +235,8 @@ CONFIG_DEFINE_ENUM_LOCALE(EControllerIcons)
         {
             { EControllerIcons::Auto,        { "AUTO", "Auto: the game will determine which icons to use based on the current input device." } },
             { EControllerIcons::Xbox,        { "XBOX", "" } },
-            { EControllerIcons::PlayStation, { "PLAYSTATION", "" } }
+            { EControllerIcons::PlayStation, { "PLAYSTATION", "" } },
+            { EControllerIcons::Nintendo,    { "NINTENDO", "" } }
         }
     },
     {
@@ -243,7 +244,8 @@ CONFIG_DEFINE_ENUM_LOCALE(EControllerIcons)
         {
             { EControllerIcons::Auto,        { "自動検出", "[自動検出:じどうけんしゅつ]: ゲーム[内:ない]の\u200Bコントローライコンを\u200B[自動検出:じどうけんしゅつ]されます" } },
             { EControllerIcons::Xbox,        { "XBOX", "" } },
-            { EControllerIcons::PlayStation, { "PLAYSTATION", "" } }
+            { EControllerIcons::PlayStation, { "PLAYSTATION", "" } },
+            { EControllerIcons::Nintendo,    { "ニンテンドー", "" } }
         }
     },
     {
@@ -251,7 +253,8 @@ CONFIG_DEFINE_ENUM_LOCALE(EControllerIcons)
         {
             { EControllerIcons::Auto,        { "AUTO", "Auto: Das Spiel erkennt automatisch deinen Controller um die Symbole dementsprechend anzupassen." } },
             { EControllerIcons::Xbox,        { "XBOX", "" } },
-            { EControllerIcons::PlayStation, { "PLAYSTATION", "" } }
+            { EControllerIcons::PlayStation, { "PLAYSTATION", "" } },
+            { EControllerIcons::Nintendo,    { "NINTENDO", "" } }
         }
     },
     {
@@ -259,7 +262,8 @@ CONFIG_DEFINE_ENUM_LOCALE(EControllerIcons)
         {
             { EControllerIcons::Auto,        { "AUTO", "Auto: le jeu déterminera automatiquement quelles icônes utiliser en fonction du périphérique d'entrée." } },
             { EControllerIcons::Xbox,        { "XBOX", "" } },
-            { EControllerIcons::PlayStation, { "PLAYSTATION", "" } }
+            { EControllerIcons::PlayStation, { "PLAYSTATION", "" } },
+            { EControllerIcons::Nintendo,    { "NINTENDO", "" } }
         }
     },
     {
@@ -267,7 +271,8 @@ CONFIG_DEFINE_ENUM_LOCALE(EControllerIcons)
         {
             { EControllerIcons::Auto,        { "AUTO", "Auto: el juego determinará de forma automática qué iconos utilizar dependiendo del dispositivo de entrada actual." } },
             { EControllerIcons::Xbox,        { "XBOX", "" } },
-            { EControllerIcons::PlayStation, { "PLAYSTATION", "" } }
+            { EControllerIcons::PlayStation, { "PLAYSTATION", "" } },
+            { EControllerIcons::Nintendo,    { "NINTENDO", "" } }
         }
     },
     {
@@ -275,7 +280,8 @@ CONFIG_DEFINE_ENUM_LOCALE(EControllerIcons)
         {
             { EControllerIcons::Auto,        { "AUTO", "Auto: il gioco determinerà quali icone da utilizzare in base al dispositivo di input attuale." } },
             { EControllerIcons::Xbox,        { "XBOX", "" } },
-            { EControllerIcons::PlayStation, { "PLAYSTATION", "" } }
+            { EControllerIcons::PlayStation, { "PLAYSTATION", "" } },
+            { EControllerIcons::Nintendo,    { "NINTENDO", "" } }
         }
     }
 };

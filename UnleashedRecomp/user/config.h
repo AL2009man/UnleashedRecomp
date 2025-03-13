@@ -55,7 +55,8 @@ enum class EControllerIcons : uint32_t
 {
     Auto,
     Xbox,
-    PlayStation
+    PlayStation,
+    Nintendo
 };
 
 enum class EChannelConfiguration : uint32_t

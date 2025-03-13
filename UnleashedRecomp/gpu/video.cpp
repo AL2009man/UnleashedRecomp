@@ -3612,12 +3612,14 @@ static void ProcSetViewport(const RenderCommand& cmd)
     g_dirtyStates.scissorRect |= g_dirtyStates.viewport;
 }
 
-static void SetTexture(GuestDevice* device, uint32_t index, GuestTexture* texture) 
+static void SetTexture(GuestDevice* device, uint32_t index, GuestTexture* texture)
 {
-    auto isPlayStation = Config::ControllerIcons == EControllerIcons::PlayStation;
+    auto isPlayStation = hid::g_inputDeviceController == hid::EInputDevice::PlayStation;
+    auto isNintendo = hid::g_inputDeviceController == hid::EInputDevice::Nintendo;
 
     if (Config::ControllerIcons == EControllerIcons::Auto)
-        isPlayStation = hid::g_inputDeviceController == hid::EInputDevice::PlayStation;
+        isPlayStation = hid::g_inputDeviceController == hid::EInputDevice::PlayStation,
+        isNintendo = hid::g_inputDeviceController == hid::EInputDevice::Nintendo;
 
     if (isPlayStation && texture != nullptr && texture->patchedTexture != nullptr)
         texture = texture->patchedTexture.get();

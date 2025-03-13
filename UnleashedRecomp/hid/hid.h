@@ -8,6 +8,7 @@ namespace hid
         Mouse,
         Xbox,
         PlayStation,
+        Nintendo,
         Unknown
     };
 

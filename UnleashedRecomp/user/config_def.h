@@ -47,7 +47,7 @@ CONFIG_DEFINE_LOCALISED("Audio", bool, MusicAttenuation, false);
 CONFIG_DEFINE_LOCALISED("Audio", bool, BattleTheme, true);
 
 CONFIG_DEFINE("Video", std::string, GraphicsDevice, "");
-CONFIG_DEFINE_ENUM("Video", EGraphicsAPI, GraphicsAPI, EGraphicsAPI::Auto);
+CONFIG_DEFINE_ENUM_LOCALISED("Video", EGraphicsAPI, GraphicsAPI, EGraphicsAPI::Auto);
 CONFIG_DEFINE("Video", int32_t, WindowX, WINDOWPOS_CENTRED);
 CONFIG_DEFINE("Video", int32_t, WindowY, WINDOWPOS_CENTRED);
 CONFIG_DEFINE_LOCALISED("Video", int32_t, WindowSize, -1);

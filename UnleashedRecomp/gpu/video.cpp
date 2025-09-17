@@ -1678,7 +1678,7 @@ bool Video::CreateHostDevice(const char *sdlVideoDriver, bool graphicsApiRetry)
 #ifdef UNLEASHED_RECOMP_D3D12
     g_vulkan = DetectWine() || Config::GraphicsAPI == EGraphicsAPI::Vulkan;
     
-    // Track if the API was chosen by Auto or manually selected
+    // Track if the Graphics API was chosen by Auto or manually selected
     g_currentAPIChosenByAuto = (Config::GraphicsAPI == EGraphicsAPI::Auto);
 #else
     // For Vulkan-only builds, check if Auto was selected

@@ -408,6 +408,12 @@ CONFIG_DEFINE_ENUM_TEMPLATE(EUIAlignmentMode)
     extern CONFIG_ENUM_LOCALE(type) g_##type##_locale; \
     ConfigDef<type> Config::name{section, #name, &g_##name##_locale, defaultValue, &g_##type##_template, &g_##type##_locale};
 
+#undef  CONFIG_DEFINE_ENUM_LOCALISED_HIDDEN
+#define CONFIG_DEFINE_ENUM_LOCALISED_HIDDEN(section, type, name, defaultValue) \
+    extern CONFIG_LOCALE g_##name##_locale; \
+    extern CONFIG_ENUM_LOCALE(type) g_##type##_locale; \
+    ConfigDef<type, true> Config::name{section, #name, &g_##name##_locale, defaultValue, &g_##type##_template, &g_##type##_locale};
+
 #include "config_def.h"
 
 // CONFIG_DEFINE

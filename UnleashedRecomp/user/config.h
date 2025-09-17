@@ -226,6 +226,7 @@ public:
 #define CONFIG_DEFINE_LOCALISED(section, type, name, defaultValue)              CONFIG_DECLARE(type, name)
 #define CONFIG_DEFINE_ENUM(section, type, name, defaultValue)                   CONFIG_DECLARE(type, name)
 #define CONFIG_DEFINE_ENUM_LOCALISED(section, type, name, defaultValue)         CONFIG_DECLARE(type, name)
+#define CONFIG_DEFINE_ENUM_LOCALISED_HIDDEN(section, type, name, defaultValue)  CONFIG_DECLARE_HIDDEN(type, name)
 
 class Config
 {

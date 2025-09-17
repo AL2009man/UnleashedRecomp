@@ -543,11 +543,11 @@ CONFIG_DEFINE_ENUM_LOCALE(EGraphicsAPI)
     {
         ELanguage::English,
         {
-            { EGraphicsAPI::Auto, { "AUTO", "Automatically selects the best available graphics API." } },
+            { EGraphicsAPI::Auto, { "AUTO", "Automatically selects the best available graphics API for your system." } },
 #ifdef UNLEASHED_RECOMP_D3D12
             { EGraphicsAPI::D3D12, { "DX12", "use Microsoft's DirectX 12 API for graphics rendering." } },
 #endif
-            { EGraphicsAPI::Vulkan, { "VULKAN", "use Vulkan API for graphics rendering." } }
+            { EGraphicsAPI::Vulkan, { "VULKAN", "use Khronos Group's Vulkan API for graphics rendering." } }
         }
     },
     {
@@ -557,7 +557,7 @@ CONFIG_DEFINE_ENUM_LOCALE(EGraphicsAPI)
 #ifdef UNLEASHED_RECOMP_D3D12
             { EGraphicsAPI::D3D12, { "DX12", "Microsoft の DirectX 12 API を\u200B[使用:しよう]してレンダリングします" } },
 #endif
-            { EGraphicsAPI::Vulkan, { "VULKAN", "Vulkan API を\u200B[使用:しよう]してレンダリングします" } }
+            { EGraphicsAPI::Vulkan, { "VULKAN", "Khronos Group の Vulkan API を\u200B[使用:しよう]してレンダリングします" } }
         }
     },
     {
@@ -567,7 +567,7 @@ CONFIG_DEFINE_ENUM_LOCALE(EGraphicsAPI)
 #ifdef UNLEASHED_RECOMP_D3D12
             { EGraphicsAPI::D3D12, { "DX12", "Verwendet Microsofts DirectX 12 API für das Rendering." } },
 #endif
-            { EGraphicsAPI::Vulkan, { "VULKAN", "Verwendet die Vulkan API für das Rendering." } }
+            { EGraphicsAPI::Vulkan, { "VULKAN", "Verwendet die Khronos Group's Vulkan API für das Rendering." } }
         }
     },
     {
@@ -577,7 +577,7 @@ CONFIG_DEFINE_ENUM_LOCALE(EGraphicsAPI)
 #ifdef UNLEASHED_RECOMP_D3D12
             { EGraphicsAPI::D3D12, { "DX12", "utilise l'API DirectX 12 de Microsoft pour le rendu." } },
 #endif
-            { EGraphicsAPI::Vulkan, { "VULKAN", "utilise l'API Vulkan pour le rendu." } }
+            { EGraphicsAPI::Vulkan, { "VULKAN", "utilise l'API Vulkan du Khronos Group pour le rendu." } }
         }
     },
     {
@@ -587,7 +587,7 @@ CONFIG_DEFINE_ENUM_LOCALE(EGraphicsAPI)
 #ifdef UNLEASHED_RECOMP_D3D12
             { EGraphicsAPI::D3D12, { "DX12", "utiliza la API DirectX 12 de Microsoft para el renderizado." } },
 #endif
-            { EGraphicsAPI::Vulkan, { "VULKAN", "utiliza la API Vulkan para el renderizado." } }
+            { EGraphicsAPI::Vulkan, { "VULKAN", "utiliza la API Vulkan del Khronos Group para el renderizado." } }
         }
     },
     {
@@ -597,7 +597,7 @@ CONFIG_DEFINE_ENUM_LOCALE(EGraphicsAPI)
 #ifdef UNLEASHED_RECOMP_D3D12
             { EGraphicsAPI::D3D12, { "DX12", "utilizza l'API DirectX 12 di Microsoft per il rendering." } },
 #endif
-            { EGraphicsAPI::Vulkan, { "VULKAN", "utilizza l'API Vulkan per il rendering." } }
+            { EGraphicsAPI::Vulkan, { "VULKAN", "utilizza l'API Vulkan del Khronos Group per il rendering." } }
         }
     }
 };

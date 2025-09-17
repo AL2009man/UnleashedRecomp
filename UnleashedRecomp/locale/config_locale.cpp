@@ -545,9 +545,9 @@ CONFIG_DEFINE_ENUM_LOCALE(EGraphicsAPI)
         {
             { EGraphicsAPI::Auto, { "AUTO", "Automatically selects the best available graphics API." } },
 #ifdef UNLEASHED_RECOMP_D3D12
-            { EGraphicsAPI::D3D12, { "DirectX 12", "use Microsoft's DirectX 12 API for graphics rendering." } },
+            { EGraphicsAPI::D3D12, { "DX12", "use Microsoft's DirectX 12 API for graphics rendering." } },
 #endif
-            { EGraphicsAPI::Vulkan, { "Vulkan", "use Vulkan API for graphics rendering." } }
+            { EGraphicsAPI::Vulkan, { "VULKAN", "use Vulkan API for graphics rendering." } }
         }
     },
     {
@@ -555,9 +555,9 @@ CONFIG_DEFINE_ENUM_LOCALE(EGraphicsAPI)
         {
             { EGraphicsAPI::Auto, { "自動", "[自動:じどう]: [最適:さいてき]なグラフィックAPIを\u200B[自動的:じどうてき]に\u200B[選択:せんたく]します" } },
 #ifdef UNLEASHED_RECOMP_D3D12
-            { EGraphicsAPI::D3D12, { "DirectX 12", "Microsoft の DirectX 12 API を\u200B[使用:しよう]してレンダリングします" } },
+            { EGraphicsAPI::D3D12, { "DX12", "Microsoft の DirectX 12 API を\u200B[使用:しよう]してレンダリングします" } },
 #endif
-            { EGraphicsAPI::Vulkan, { "Vulkan", "Vulkan API を\u200B[使用:しよう]してレンダリングします" } }
+            { EGraphicsAPI::Vulkan, { "VULKAN", "Vulkan API を\u200B[使用:しよう]してレンダリングします" } }
         }
     },
     {
@@ -565,9 +565,9 @@ CONFIG_DEFINE_ENUM_LOCALE(EGraphicsAPI)
         {
             { EGraphicsAPI::Auto, { "AUTO", "Wählt automatisch die beste verfügbare Grafik-API aus." } },
 #ifdef UNLEASHED_RECOMP_D3D12
-            { EGraphicsAPI::D3D12, { "DirectX 12", "Verwendet Microsofts DirectX 12 API für das Rendering." } },
+            { EGraphicsAPI::D3D12, { "DX12", "Verwendet Microsofts DirectX 12 API für das Rendering." } },
 #endif
-            { EGraphicsAPI::Vulkan, { "Vulkan", "Verwendet die Vulkan API für das Rendering." } }
+            { EGraphicsAPI::Vulkan, { "VULKAN", "Verwendet die Vulkan API für das Rendering." } }
         }
     },
     {
@@ -575,9 +575,9 @@ CONFIG_DEFINE_ENUM_LOCALE(EGraphicsAPI)
         {
             { EGraphicsAPI::Auto, { "AUTO", "sélectionne automatiquement la meilleure API graphique disponible." } },
 #ifdef UNLEASHED_RECOMP_D3D12
-            { EGraphicsAPI::D3D12, { "DirectX 12", "utilise l'API DirectX 12 de Microsoft pour le rendu." } },
+            { EGraphicsAPI::D3D12, { "DX12", "utilise l'API DirectX 12 de Microsoft pour le rendu." } },
 #endif
-            { EGraphicsAPI::Vulkan, { "Vulkan", "utilise l'API Vulkan pour le rendu." } }
+            { EGraphicsAPI::Vulkan, { "VULKAN", "utilise l'API Vulkan pour le rendu." } }
         }
     },
     {
@@ -585,9 +585,9 @@ CONFIG_DEFINE_ENUM_LOCALE(EGraphicsAPI)
         {
             { EGraphicsAPI::Auto, { "AUTO", "selecciona automáticamente la mejor API de gráficos disponible." } },
 #ifdef UNLEASHED_RECOMP_D3D12
-            { EGraphicsAPI::D3D12, { "DirectX 12", "utiliza la API DirectX 12 de Microsoft para el renderizado." } },
+            { EGraphicsAPI::D3D12, { "DX12", "utiliza la API DirectX 12 de Microsoft para el renderizado." } },
 #endif
-            { EGraphicsAPI::Vulkan, { "Vulkan", "utiliza la API Vulkan para el renderizado." } }
+            { EGraphicsAPI::Vulkan, { "VULKAN", "utiliza la API Vulkan para el renderizado." } }
         }
     },
     {
@@ -595,9 +595,9 @@ CONFIG_DEFINE_ENUM_LOCALE(EGraphicsAPI)
         {
             { EGraphicsAPI::Auto, { "AUTO", "seleziona automaticamente la migliore API grafica disponibile." } },
 #ifdef UNLEASHED_RECOMP_D3D12
-            { EGraphicsAPI::D3D12, { "DirectX 12", "utilizza l'API DirectX 12 di Microsoft per il rendering." } },
+            { EGraphicsAPI::D3D12, { "DX12", "utilizza l'API DirectX 12 di Microsoft per il rendering." } },
 #endif
-            { EGraphicsAPI::Vulkan, { "Vulkan", "utilizza l'API Vulkan per il rendering." } }
+            { EGraphicsAPI::Vulkan, { "VULKAN", "utilizza l'API Vulkan per il rendering." } }
         }
     }
 };

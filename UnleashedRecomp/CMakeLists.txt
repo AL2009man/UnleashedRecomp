@@ -226,6 +226,7 @@ set(UNLEASHED_RECOMP_CXX_SOURCES
     "main.cpp"
     "misc_impl.cpp"
     "preload_executable.cpp"
+    "sdl_dynamic_api.cpp"
     "sdl_listener.cpp"
     "stdafx.cpp"
     "version.cpp"

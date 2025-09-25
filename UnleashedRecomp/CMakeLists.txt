@@ -60,6 +60,7 @@ endif()
 
 add_compile_definitions(
     SDL_MAIN_HANDLED
+    SDL_DYNAMIC_API # allows SDL2 dynamic links at runtime
     _DISABLE_CONSTEXPR_MUTEX_CONSTRUCTOR # Microsoft wtf?
     _CRT_SECURE_NO_WARNINGS)
 

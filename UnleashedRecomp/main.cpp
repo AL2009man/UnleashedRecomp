@@ -27,6 +27,7 @@
 #include <ui/installer_wizard.h>
 #include <mod/mod_loader.h>
 #include <preload_executable.h>
+#include "sdl_dynamic_api.h"
 
 #ifdef _WIN32
 #include <timeapi.h>
@@ -204,6 +205,10 @@ int main(int argc, char *argv[])
         LOGN_WARNING("OS does not support registry.");
 
     os::logger::Init();
+
+    // Initialize and log SDL Dynamic API information
+    UnleashedRecomp::SDL::InitializeDynamicAPI();
+    auto sdlInfo = UnleashedRecomp::SDL::GetLibraryInfo();
 
     PreloadContext preloadContext;
     preloadContext.PreloadExecutable();
